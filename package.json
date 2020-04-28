@@ -1,0 +1,29 @@
+{
+  "name": "block-kit-handler",
+  "version": "0.1.0",
+  "description": "npm module to handle slack block kit",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc --build && node .dist/index.js",
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/saito-ya/block-kit-handler.git"
+  },
+  "keywords": [
+    "slack",
+    "block-kit"
+  ],
+  "author": "SAITO Yasuo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saito-ya/block-kit-handler/issues"
+  },
+  "homepage": "https://github.com/saito-ya/block-kit-handler#readme",
+  "dependencies": {
+    "typescript": "^3.8.3"
+  }
+}
