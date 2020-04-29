@@ -7,7 +7,9 @@
     "start": "tsc --build && node .dist/index.js",
     "build": "tsc",
     "watch": "tsc --watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test2": "mocha .dist/test/**/*.test.js",
+    "test": "cross-env TS_NODE_FILES=true mocha --exit --require ts-node/register --colors test/**/*.ts",
+    "coverage": "nyc npm run test"
   },
   "repository": {
     "type": "git",
@@ -24,6 +26,15 @@
   },
   "homepage": "https://github.com/saito-ya/block-kit-handler#readme",
   "dependencies": {
+    "cross-env": "^7.0.2",
+    "mocha": "^7.1.2",
+    "nyc": "^15.0.1",
+    "ts-node": "^8.9.1",
     "typescript": "^3.8.3"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.11",
+    "@types/mocha": "^7.0.2",
+    "chai": "^4.2.0"
   }
 }
