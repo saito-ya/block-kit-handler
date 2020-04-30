@@ -7,7 +7,6 @@
     "start": "tsc --build && node .dist/index.js",
     "build": "tsc",
     "watch": "tsc --watch",
-    "test2": "mocha .dist/test/**/*.test.js",
     "test": "cross-env TS_NODE_FILES=true mocha --exit --require ts-node/register --colors test/**/*.ts",
     "coverage": "nyc npm run test"
   },
@@ -26,6 +25,7 @@
   },
   "homepage": "https://github.com/saito-ya/block-kit-handler#readme",
   "dependencies": {
+    "@slack/types": "^1.6.0",
     "cross-env": "^7.0.2",
     "mocha": "^7.1.2",
     "nyc": "^15.0.1",
