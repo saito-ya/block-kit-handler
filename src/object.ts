@@ -20,7 +20,6 @@ export interface OptionOptionalProps {
     description?: Slack.PlainTextElement;
     url?: string
 }
-
 export function option(text: Slack.PlainTextElement | Slack.MrkdwnElement, value: string, optionalProps?: OptionOptionalProps): Slack.Option {
     return {
         text,
