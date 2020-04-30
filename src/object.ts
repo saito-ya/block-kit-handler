@@ -18,7 +18,7 @@ export function mrkdwnText(text: string, verbatim?: boolean): Slack.MrkdwnElemen
 
 export interface OptionOptionalProps {
     description?: Slack.PlainTextElement;
-    url?: string
+    url?: string;
 }
 export function option(text: Slack.PlainTextElement | Slack.MrkdwnElement, value: string, optionalProps?: OptionOptionalProps): Slack.Option {
     return {
