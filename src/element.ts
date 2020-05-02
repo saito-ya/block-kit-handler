@@ -18,9 +18,11 @@ export function button(text: Slack.PlainTextElement, actionId: string, optionalP
 }
 
 export interface CheckboxesOptionalProps {
-    initialOptions: Slack.Option[]
+    initialOptions?: Slack.Option[]
 }
 export function checkboxes(actionId: string, options: Slack.Option[], optionalProps?: CheckboxesOptionalProps): Slack.Checkboxes {
+    // TODO: check if elements of initialOptions are included in options
+    
     return {
         type: 'checkboxes',
         action_id: actionId,
@@ -30,8 +32,8 @@ export function checkboxes(actionId: string, options: Slack.Option[], optionalPr
 }
 
 export interface DatepickerOptionalProps {
-    placeholder: Slack.PlainTextElement;
-    initialDate: string;
+    placeholder?: Slack.PlainTextElement;
+    initialDate?: string;
 }
 export function datepicker(actionId: string, optionalProps?: DatepickerOptionalProps): Slack.Datepicker {
     return {
@@ -43,11 +45,11 @@ export function datepicker(actionId: string, optionalProps?: DatepickerOptionalP
 }
 
 export interface PlainTextInputOptionalProps {
-    placeholder: Slack.PlainTextElement;
-    initialValue: string;
-    multiline: boolean;
-    minLength: number;
-    maxLenght: number;
+    placeholder?: Slack.PlainTextElement;
+    initialValue?: string;
+    multiline?: boolean;
+    minLength?: number;
+    maxLenght?: number;
 }
 export function plainTextInput(actionId: string, optionalProps?: PlainTextInputOptionalProps): Slack.PlainTextInput {
     return {
@@ -62,7 +64,7 @@ export function plainTextInput(actionId: string, optionalProps?: PlainTextInputO
 }
 
 export interface StaticSelectOptionalProps {
-    initialOption: Slack.Option;
+    initialOption?: Slack.Option;
 }
 export function staticSelect(actionId: string, placeholder: Slack.PlainTextElement, options: Slack.Option[], optionalProps?: StaticSelectOptionalProps): Slack.StaticSelect {
     return {
