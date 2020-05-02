@@ -39,7 +39,6 @@ describe('object', () => {
             url: undefined
         }
         chai.assert.deepEqual(obj, expected);
-        console.log(JSON.stringify(obj));
     })
 
     it('option - optional props', () => {
