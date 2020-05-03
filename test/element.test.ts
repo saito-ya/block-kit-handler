@@ -1,9 +1,9 @@
 import * as chai from 'chai';
 import * as Slack from '@slack/types';
-import { button, checkboxes, datepicker, plainTextInput, staticSelect } from '../../src/element';
-import { plainText, option, mrkdwnText } from '../../src/object';
+import { button, checkboxes, datepicker, plainTextInput, staticSelect } from '../src/element';
+import { plainText, option, mrkdwnText } from '../src/object';
 
-describe('object', () => {
+describe('element', () => {
     it('button - required props only', () => {
         const obj = button(plainText('button'), 'button_action');
 
