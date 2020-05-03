@@ -1,10 +1,10 @@
 import * as Slack from '@slack/types';
 
-export declare type STYLE = 'primary' | 'danger';
+declare type BUTTON_STYLE = 'primary' | 'danger';
 export interface ButtonOptionalProps {
     url?: string;
     value?: string;
-    style?: STYLE;
+    style?: BUTTON_STYLE;
 }
 export function button(text: Slack.PlainTextElement, actionId: string, optionalProps?: ButtonOptionalProps): Slack.Button {
     return {
