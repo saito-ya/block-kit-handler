@@ -1,6 +1,6 @@
 import * as chai from 'chai';
 import * as Slack from '@slack/types';
-import { plainText, mrkdwnText, option } from '../../src/object';
+import { plainText, mrkdwnText, option } from '../src/object';
 
 describe('object', () => {
     it('plainText', () => {
@@ -15,7 +15,7 @@ describe('object', () => {
     })
 
     it('mrkdwnText', () => {
-        const obj = mrkdwnText('mrkdwn text', false);
+        const obj = mrkdwnText('mrkdwn text', { verbatim: false});
 
         const expected: Slack.MrkdwnElement = {
             type: 'mrkdwn',
@@ -39,11 +39,10 @@ describe('object', () => {
             url: undefined
         }
         chai.assert.deepEqual(obj, expected);
-        console.log(JSON.stringify(obj));
     })
 
     it('option - optional props', () => {
-        const obj = option(mrkdwnText('mrkdwn option', true), 'value-mrkdwn', {
+        const obj = option(mrkdwnText('mrkdwn option', { verbatim: true }), 'value-mrkdwn', {
             description: plainText('description'),
             url: 'https://google.com'
         });

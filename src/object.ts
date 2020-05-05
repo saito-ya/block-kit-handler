@@ -1,24 +1,30 @@
 import * as Slack from '@slack/types';
 
-export function plainText(text: string, emoji?: boolean): Slack.PlainTextElement {
+export interface PlainTextOptionalProps {
+    emoji?: boolean
+}
+export function plainText(text: string, optionalProps?: PlainTextOptionalProps): Slack.PlainTextElement {
     return {
         type: 'plain_text',
         text,
-        emoji
+        emoji: optionalProps?.emoji
     }
 }
 
-export function mrkdwnText(text: string, verbatim?: boolean): Slack.MrkdwnElement {
+export interface MrkdwnTextOptionalProps {
+    verbatim?: boolean
+}
+export function mrkdwnText(text: string, optionalProps?: MrkdwnTextOptionalProps): Slack.MrkdwnElement {
     return {
         type: 'mrkdwn',
         text,
-        verbatim
+        verbatim: optionalProps?.verbatim
     }
 }
 
 export interface OptionOptionalProps {
     description?: Slack.PlainTextElement;
-    url?: string
+    url?: string;
 }
 export function option(text: Slack.PlainTextElement | Slack.MrkdwnElement, value: string, optionalProps?: OptionOptionalProps): Slack.Option {
     return {
