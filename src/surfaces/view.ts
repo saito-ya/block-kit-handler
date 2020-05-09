@@ -2,7 +2,7 @@ import * as Slack from '@slack/types';
 import { BlockKit, BLOCK_TYPE } from "./block-kit";
 
 export abstract class View extends BlockKit {
-    private_metadata?: string;
+    public private_metadata?: string;
 
     constructor(blocks?: BLOCK_TYPE[], initialMetadata?: {[key: string]: any}){
         super(blocks);
