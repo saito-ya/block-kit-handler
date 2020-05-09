@@ -3,7 +3,8 @@ import * as Slack from '@slack/types';
 export interface PlainTextOptionalProps {
     emoji?: boolean
 }
-export function plainText(text: string, optionalProps?: PlainTextOptionalProps): Slack.PlainTextElement {
+export interface PlainTextElement extends Slack.PlainTextElement{}
+export function plainText(text: string, optionalProps?: PlainTextOptionalProps): PlainTextElement {
     return {
         type: 'plain_text',
         text,
@@ -14,7 +15,8 @@ export function plainText(text: string, optionalProps?: PlainTextOptionalProps):
 export interface MrkdwnTextOptionalProps {
     verbatim?: boolean
 }
-export function mrkdwnText(text: string, optionalProps?: MrkdwnTextOptionalProps): Slack.MrkdwnElement {
+export interface MrkdwnElement extends Slack.MrkdwnElement{}
+export function mrkdwnText(text: string, optionalProps?: MrkdwnTextOptionalProps): MrkdwnElement {
     return {
         type: 'mrkdwn',
         text,
@@ -26,7 +28,8 @@ export interface OptionOptionalProps {
     description?: Slack.PlainTextElement;
     url?: string;
 }
-export function option(text: Slack.PlainTextElement | Slack.MrkdwnElement, value: string, optionalProps?: OptionOptionalProps): Slack.Option {
+export interface Option extends Slack.Option{}
+export function option(text: PlainTextElement | MrkdwnElement, value: string, optionalProps?: OptionOptionalProps): Option {
     return {
         text,
         value,

@@ -1,15 +1,17 @@
 import * as Slack from '@slack/types';
 import { clone } from '../util';
+import { ActionsBlock, ContextBlock, DividerBlock, InputBlock, SectionBlock } from '../block';
 
+export declare type BLOCK_TYPE = ActionsBlock | ContextBlock | DividerBlock | InputBlock | SectionBlock | Slack.Block;
 export class BlockKit {
-    blocks: Slack.Block[];
+    blocks: BLOCK_TYPE[];
 
-    constructor(blocks?: Slack.Block[]) {
+    constructor(blocks?: BLOCK_TYPE[]) {
         if(blocks) this.blocks = clone(blocks);
         else this.blocks = [];
     }
 
-    addBlocks(additionalBlocks: Slack.Block[], previousBlockId: string): this {
+    addBlocks(additionalBlocks: BLOCK_TYPE[], previousBlockId: string): this {
         for (const [index, block] of this.blocks.entries()) {
             if (block.block_id && block.block_id === previousBlockId) {
                 this.blocks.splice(index + 1, 0, ...clone(additionalBlocks));
@@ -19,12 +21,12 @@ export class BlockKit {
         return this;
     }
 
-    addBlocksAtFirst(additionalBlocks: Slack.Block[]): this {
+    addBlocksAtFirst(additionalBlocks: BLOCK_TYPE[]): this {
         this.blocks = clone(additionalBlocks).concat(this.blocks);
         return this;
     }
 
-    addBlocksAtLast(additionalBlocks: Slack.Block[]): this {
+    addBlocksAtLast(additionalBlocks: BLOCK_TYPE[]): this {
         this.blocks = this.blocks.concat(clone(additionalBlocks));
         return this;
     }
@@ -46,7 +48,7 @@ export class BlockKit {
         return this;
     }
 
-    exchangeBlock(additionalBlock: Slack.Block, removalBlockId: string): this {
+    exchangeBlock(additionalBlock: BLOCK_TYPE, removalBlockId: string): this {
         for (const [index, block] of this.blocks.entries()) {
             if (block.block_id === removalBlockId) {
                 this.blocks.splice(index, 1, additionalBlock);
