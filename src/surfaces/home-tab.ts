@@ -1,9 +1,10 @@
 import * as Slack from '@slack/types';
+import { BLOCK_TYPE } from "./block-kit";
 import { View } from "./view";
 
 interface IHomeTab extends Slack.View {
     type: 'home';
-    blocks: Slack.Block[];
+    blocks: BLOCK_TYPE[];
     callback_id?: string;
     private_metadata?: string;
     external_id?: string;
@@ -20,7 +21,7 @@ export class HomeTab extends View {
     callback_id?: string;
     external_id?: string;
 
-    constructor(blocks?: Slack.Block[], optionalProps?: HomeTabOptionalProps) {
+    constructor(blocks?: BLOCK_TYPE[], optionalProps?: HomeTabOptionalProps) {
         super(blocks, optionalProps?.privateMetadata);
         this.type = 'home';
         this.callback_id = optionalProps?.callbackId;

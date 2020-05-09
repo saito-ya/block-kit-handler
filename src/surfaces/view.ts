@@ -1,10 +1,10 @@
 import * as Slack from '@slack/types';
-import { BlockKit } from "./block-kit";
+import { BlockKit, BLOCK_TYPE } from "./block-kit";
 
 export abstract class View extends BlockKit {
     private_metadata?: string;
 
-    constructor(blocks?: Slack.Block[], initialMetadata?: {[key: string]: any}){
+    constructor(blocks?: BLOCK_TYPE[], initialMetadata?: {[key: string]: any}){
         super(blocks);
         this.private_metadata = initialMetadata ? JSON.stringify(initialMetadata) : undefined;
     }
