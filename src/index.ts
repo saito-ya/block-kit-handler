@@ -5,3 +5,5 @@ export * from './block';
 export * from './surfaces/message';
 export * from './surfaces/modal';
 export * from './surfaces/home-tab';
+
+export * from './util';
