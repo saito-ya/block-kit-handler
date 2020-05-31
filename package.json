@@ -1,6 +1,6 @@
 {
   "name": "block-kit-handler",
-  "version": "0.9.4",
+  "version": "1.0.0",
   "description": "npm module to handle slack block kit",
   "main": ".dist/src/index.js",
   "scripts": {
@@ -15,8 +15,8 @@
     "url": "git+ssh://git@github.com/saito-ya/block-kit-handler.git"
   },
   "keywords": [
-    "slack",
-    "block-kit"
+    "Slack",
+    "Block Kit"
   ],
   "author": "SAITO Yasuo",
   "license": "ISC",
