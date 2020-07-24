@@ -1,6 +1,6 @@
 {
   "name": "block-kit-handler",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "npm module to handle slack block kit",
   "main": ".dist/src/index.js",
   "scripts": {
@@ -25,15 +25,15 @@
   },
   "homepage": "https://github.com/saito-ya/block-kit-handler#readme",
   "dependencies": {
-    "@slack/types": "^1.6.0",
+    "@slack/types": "^1.7.0",
     "cross-env": "^7.0.2",
-    "mocha": "^7.1.2",
-    "nyc": "^15.0.1",
-    "ts-node": "^8.9.1",
-    "typescript": "^3.8.3"
+    "mocha": "^7.2.0",
+    "nyc": "^15.1.0",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.7"
   },
   "devDependencies": {
-    "@types/chai": "^4.2.11",
+    "@types/chai": "^4.2.12",
     "@types/mocha": "^7.0.2",
     "chai": "^4.2.0"
   }

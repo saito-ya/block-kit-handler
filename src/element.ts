@@ -48,6 +48,15 @@ export function datepicker(actionId: string, optionalProps?: DatepickerOptionalP
     }
 }
 
+export interface OverflowMenu extends Slack.Overflow{}
+export function overflowMenu(actionId: string, options: Option[]): OverflowMenu {
+    return {
+        type: 'overflow',
+        action_id: actionId,
+        options
+    };
+}
+
 export interface PlainTextInputOptionalProps {
     placeholder?: PlainTextElement;
     initialValue?: string;
