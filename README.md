@@ -188,7 +188,7 @@ app.event('app_home_opened', async({ context, body }) => {
 | Multi-select menu with user list | not yet | [Link](https://api.slack.com/reference/block-kit/block-elements#users_multi_select) |
 | Multi-select menu with conversations list | not yet | [Link](https://api.slack.com/reference/block-kit/block-elements#conversation_multi_select) |
 | Multi-select menu with channels list | not yet | [Link](https://api.slack.com/reference/block-kit/block-elements#channel_multi_select) |
-| Overflow menu | not yet | [Link](https://api.slack.com/reference/block-kit/block-elements#overflow) |
+| Overflow menu | yes | [Link](https://api.slack.com/reference/block-kit/block-elements#overflow) |
 | Plain-text input | yes | [Link](https://api.slack.com/reference/block-kit/block-elements#input) |
 | Radio button group | not yet | [Link](https://api.slack.com/reference/block-kit/block-elements#radio) |
 | Select menu with static options | yes | [Link](https://api.slack.com/reference/block-kit/block-elements#static_select) |
