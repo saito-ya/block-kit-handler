@@ -19,7 +19,7 @@ interface ModalOptionalProps {
     callback_id?: string;
     close?: PlainTextElement;
     submit?: PlainTextElement;
-    privateMetadata?: {[key: string]: any};
+    privateMetadata?: string | {[key: string]: any};
     clearOnClose?: boolean;
     notifyOnClose?: boolean;
 }

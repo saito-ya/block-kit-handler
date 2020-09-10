@@ -106,4 +106,49 @@ describe('surfaces', () => {
         chai.assert.deepEqual(homeTab.getView(), expected);
     })
 
+    it('home-tab (str private_metadata)', () => {
+        const blocks: BLOCK_TYPE[] = [
+            actions([button(plainText('button 1'), 'button_pushed')]),
+            input(plainText('input'), datepicker('date_picked', { initialDate: '2020-05-02'}))
+        ]
+        const homeTab = new HomeTab(blocks, {
+            callbackId: 'callback',
+            privateMetadata: 'I\'m a genius.'
+        })
+
+        const expected: Slack.View = {
+            type: 'home',
+            blocks: [
+                {
+                    type: 'actions',
+                    elements: [
+                        {
+                            type: 'button',
+                            text: {
+                                type: 'plain_text',
+                                text: 'button 1'
+                            },
+                            action_id: 'button_pushed'
+                        }
+                    ]
+                },
+                {
+                    type: 'input',
+                    label: {
+                        type: 'plain_text',
+                        text: 'input'
+                    },
+                    element: {
+                        type: 'datepicker',
+                        action_id: 'date_picked',
+                        initial_date: '2020-05-02'
+                    }
+                }
+            ],
+            callback_id: 'callback',
+            private_metadata: 'I\'m a genius.'
+        }
+        chai.assert.deepEqual(homeTab.getView(), expected);
+    })
+
 })
