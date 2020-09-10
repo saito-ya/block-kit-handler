@@ -11,7 +11,7 @@ interface IHomeTab extends Slack.View {
 
 interface HomeTabOptionalProps {
     callbackId?: string;
-    privateMetadata?: {[key: string]: any};
+    privateMetadata?: string | {[key: string]: any};
 }
 
 export class HomeTab extends View {

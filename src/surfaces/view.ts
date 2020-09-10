@@ -4,9 +4,18 @@ import { BlockKit, BLOCK_TYPE } from "./block-kit";
 export abstract class View extends BlockKit {
     public private_metadata?: string;
 
-    constructor(blocks?: BLOCK_TYPE[], initialMetadata?: {[key: string]: any}){
+    constructor(blocks?: BLOCK_TYPE[], initialMetadata?: string | {[key: string]: any}){
         super(blocks);
-        this.private_metadata = initialMetadata ? JSON.stringify(initialMetadata) : undefined;
+
+        if (!initialMetadata) {
+            this.private_metadata = undefined;
+            return;
+        } 
+        if (typeof initialMetadata === 'string') {
+            this.private_metadata = initialMetadata;
+            return;
+        } 
+        this.private_metadata = JSON.stringify(initialMetadata);
     }
 
     updateMetadata(key: string, value: any): this {
