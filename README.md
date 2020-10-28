@@ -9,6 +9,7 @@ block-kit-handler lets you programmatically handle Block Kit with less code and 
 npm install block-kit-handler
 ```
 
+
 ## Usage
 I have Github project that shows how to use block-kit-handler.  
 For details, please refer to [the project](https://github.com/saito-ya/block-kit-handler-examples).
@@ -156,6 +157,7 @@ app.event('app_home_opened', async({ context, body }) => {
 ![home tab sample](./img/home_tab.png)
 
  JSON for the same home tab is [here](https://app.slack.com/block-kit-builder/T1CC0HZDJ#%7B%22type%22:%22home%22,%22blocks%22:%5B%7B%22type%22:%22section%22,%22text%22:%7B%22type%22:%22mrkdwn%22,%22text%22:%22*Here's%20what%20you%20can%20do%20with%20Project%20Tracker:*%22%7D%7D,%7B%22type%22:%22actions%22,%22elements%22:%5B%7B%22type%22:%22button%22,%22text%22:%7B%22type%22:%22plain_text%22,%22text%22:%22Create%20New%20Task%22,%22emoji%22:true%7D,%22style%22:%22primary%22,%22value%22:%22create_task%22%7D,%7B%22type%22:%22button%22,%22text%22:%7B%22type%22:%22plain_text%22,%22text%22:%22Create%20New%20Project%22,%22emoji%22:true%7D,%22value%22:%22create_project%22%7D,%7B%22type%22:%22button%22,%22text%22:%7B%22type%22:%22plain_text%22,%22text%22:%22Help%22,%22emoji%22:true%7D,%22value%22:%22help%22%7D%5D%7D,%7B%22type%22:%22section%22,%22text%22:%7B%22type%22:%22mrkdwn%22,%22text%22:%22*Your%20Configurations*%22%7D%7D,%7B%22type%22:%22divider%22%7D,%7B%22type%22:%22section%22,%22text%22:%7B%22type%22:%22mrkdwn%22,%22text%22:%22*#public-relations*%5Cn%3Cfakelink.toUrl.com%7CPR%20Strategy%202019%3E%20posts%20new%20tasks,%20comments,%20and%20project%20updates%20to%20%3Cfakelink.toChannel.com%7C#public-relations%3E%22%7D,%22accessory%22:%7B%22type%22:%22button%22,%22text%22:%7B%22type%22:%22plain_text%22,%22text%22:%22Edit%22,%22emoji%22:true%7D,%22value%22:%22public-relations%22%7D%7D,%7B%22type%22:%22divider%22%7D,%7B%22type%22:%22section%22,%22text%22:%7B%22type%22:%22mrkdwn%22,%22text%22:%22*#team-updates*%5Cn%3Cfakelink.toUrl.com%7CQ4%20Team%20Projects%3E%20posts%20project%20updates%20to%20%3Cfakelink.toChannel.com%7C#team-updates%3E%22%7D,%22accessory%22:%7B%22type%22:%22button%22,%22text%22:%7B%22type%22:%22plain_text%22,%22text%22:%22Edit%22,%22emoji%22:true%7D,%22value%22:%22public-relations%22%7D%7D,%7B%22type%22:%22divider%22%7D,%7B%22type%22:%22actions%22,%22elements%22:%5B%7B%22type%22:%22button%22,%22text%22:%7B%22type%22:%22plain_text%22,%22text%22:%22New%20Configuration%22,%22emoji%22:true%7D,%22value%22:%22new_configuration%22%7D%5D%7D%5D%7D).
+
 
 ## Supported Components (As of Oct. 28th, 2020)
 ### Surfaces
