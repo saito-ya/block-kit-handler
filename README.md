@@ -186,11 +186,11 @@ app.event('app_home_opened', async({ context, body }) => {
 | Checkboxes | yes | [Link](https://api.slack.com/reference/block-kit/block-elements#checkboxes) |
 | Date Picker | yes | [Link](https://api.slack.com/reference/block-kit/block-elements#datepicker) |
 | Image | not yet | [Link](https://api.slack.com/reference/block-kit/block-elements#image) |
-| Multi-select menu with static options | not yet | [Link](https://api.slack.com/reference/block-kit/block-elements#static_multi_select) |
-| Multi-select menu with external data source | not yet | [Link](https://api.slack.com/reference/block-kit/block-elements#external_multi_select) |
-| Multi-select menu with user list | not yet | [Link](https://api.slack.com/reference/block-kit/block-elements#users_multi_select) |
-| Multi-select menu with conversations list | not yet | [Link](https://api.slack.com/reference/block-kit/block-elements#conversation_multi_select) |
-| Multi-select menu with channels list | not yet | [Link](https://api.slack.com/reference/block-kit/block-elements#channel_multi_select) |
+| Multi-select menu with static options | yes | [Link](https://api.slack.com/reference/block-kit/block-elements#static_multi_select) |
+| Multi-select menu with external data source | yes | [Link](https://api.slack.com/reference/block-kit/block-elements#external_multi_select) |
+| Multi-select menu with user list | yes | [Link](https://api.slack.com/reference/block-kit/block-elements#users_multi_select) |
+| Multi-select menu with conversations list | yes | [Link](https://api.slack.com/reference/block-kit/block-elements#conversation_multi_select) |
+| Multi-select menu with channels list | yes | [Link](https://api.slack.com/reference/block-kit/block-elements#channel_multi_select) |
 | Overflow menu | yes | [Link](https://api.slack.com/reference/block-kit/block-elements#overflow) |
 | Plain-text input | yes | [Link](https://api.slack.com/reference/block-kit/block-elements#input) |
 | Radio button group | not yet | [Link](https://api.slack.com/reference/block-kit/block-elements#radio) |

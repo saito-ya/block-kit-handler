@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/saito-ya/block-kit-handler#readme",
   "dependencies": {
-    "@slack/types": "^1.7.0",
+    "@slack/types": "^1.10.0",
     "cross-env": "^7.0.2",
     "mocha": "^7.2.0",
     "nyc": "^15.1.0",
