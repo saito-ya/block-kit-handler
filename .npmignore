@@ -4,3 +4,8 @@ tslint.json
 test/
 src/
 .img
+.nycrc
+coverage/
+.nyc_output/
+.dist/test/
+img/
