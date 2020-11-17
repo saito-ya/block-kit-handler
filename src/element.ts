@@ -175,7 +175,7 @@ export interface ExternalSelectOptionalProps {
     minQueryLength?: number;
 }
 export interface ExternalSelect extends Slack.ExternalSelect{}
-export function externalSelect(actionId: string, placeholder: PlainTextElement, options: Option[], optionalProps?: ExternalSelectOptionalProps): ExternalSelect {
+export function externalSelect(actionId: string, placeholder: PlainTextElement, optionalProps?: ExternalSelectOptionalProps): ExternalSelect {
     return {
         type: 'external_select',
         action_id: actionId,
@@ -189,7 +189,7 @@ export interface UsersSelectOptionalProps {
     initialUser?: string;
 }
 export interface UsersSelect extends Slack.UsersSelect{}
-export function usersSelect(actionId: string, placeholder: PlainTextElement, options: Option[], optionalProps?: UsersSelectOptionalProps): UsersSelect {
+export function usersSelect(actionId: string, placeholder: PlainTextElement, optionalProps?: UsersSelectOptionalProps): UsersSelect {
     return {
         type: 'users_select',
         action_id: actionId,
@@ -204,7 +204,7 @@ export interface ConversationsSelectOptionalProps {
     responseUrlEnabled: boolean;
 }
 export interface ConversationsSelect extends Slack.ConversationsSelect{}
-export function conversationsSelect(actionId: string, placeholder: PlainTextElement, options: Option[], optionalProps?: ConversationsSelectOptionalProps): ConversationsSelect {
+export function conversationsSelect(actionId: string, placeholder: PlainTextElement, optionalProps?: ConversationsSelectOptionalProps): ConversationsSelect {
     return {
         type: 'conversations_select',
         action_id: actionId,
@@ -219,7 +219,7 @@ export interface ChannelsSelectOptionalProps {
     defaultToCurrentConversation?: boolean;
 }
 export interface ChannelsSelect extends Slack.ChannelsSelect{}
-export function channelsSelect(actionId: string, placeholder: PlainTextElement, options: Option[], optionalProps?: ChannelsSelectOptionalProps): ChannelsSelect {
+export function channelsSelect(actionId: string, placeholder: PlainTextElement, optionalProps?: ChannelsSelectOptionalProps): ChannelsSelect {
     return {
         type: 'channels_select',
         action_id: actionId,
