@@ -1,8 +1,8 @@
 import * as Slack from '@slack/types'
 import { PlainTextElement, MrkdwnElement } from './object';
-import { Button, Checkboxes, Datepicker, PlainTextInput, StaticSelect } from './element';
+import { Button, Checkboxes, Datepicker, MultiSelect, OverflowMenu, PlainTextInput, Select } from './element';
 
-declare type ACTIONS_ELEMENTS_TYPE = (Button | Datepicker | Checkboxes | StaticSelect | Slack.Overflow | Slack.Select | Slack.RadioButtons)[];
+declare type ACTIONS_ELEMENTS_TYPE = (Button | OverflowMenu | Datepicker | Select | Checkboxes | Slack.RadioButtons | Slack.Action)[];
 export interface ActionsOptionalProps {
     blockId?: string;
 }
@@ -39,7 +39,7 @@ export function divider(optionalProps?: DividerOptionalProps): DividerBlock {
     }
 }
 
-declare type INPUT_ELEMENT_TYPE = Checkboxes | Datepicker | PlainTextInput | StaticSelect | Slack.Select | Slack.MultiSelect | Slack.RadioButtons;
+declare type INPUT_ELEMENT_TYPE = Select | MultiSelect | Datepicker | PlainTextInput | Checkboxes | Slack.RadioButtons;
 export interface InputOptionalProps {
     blockId?: string;
     hint?: PlainTextElement;
@@ -57,7 +57,7 @@ export function input(label: PlainTextElement, element: INPUT_ELEMENT_TYPE, opti
     }
 }
 
-declare type SECTION_ACCESSORY_TYPE = Button | Checkboxes | Datepicker | StaticSelect | Slack.Overflow | Slack.Select | Slack.MultiSelect | Slack.Action | Slack.ImageElement | Slack.RadioButtons;
+declare type SECTION_ACCESSORY_TYPE = Button | OverflowMenu | Datepicker | Select | MultiSelect | Checkboxes | Slack.Action | Slack.ImageElement | Slack.RadioButtons;
 export interface SectionOptionalProps {
     text?: PlainTextElement | MrkdwnElement;
     fields?: (PlainTextElement | MrkdwnElement)[];
