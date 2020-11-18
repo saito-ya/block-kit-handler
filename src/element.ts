@@ -48,12 +48,14 @@ export function datepicker(actionId: string, optionalProps?: DatepickerOptionalP
     }
 }
 
-export interface MultiSelectOptionalProps {
+export declare type MultiSelect = MultiStaticSelect | MultiExternalSelect | MultiUsersSelect  | MultiConversationsSelect | MultiChannelsSelect;
+
+export interface MultiStaticSelectOptionalProps {
     initialOptions?: Option[];
     maxSelectedItems?: number;
 }
-export interface MultiSelect extends Slack.MultiStaticSelect{}
-export function multiSelect(actionId: string, placeholder: PlainTextElement, options: Option[], optionalProps?: MultiSelectOptionalProps): MultiSelect {
+export interface MultiStaticSelect extends Slack.MultiStaticSelect{}
+export function multiStaticSelect(actionId: string, placeholder: PlainTextElement, options: Option[], optionalProps?: MultiStaticSelectOptionalProps): MultiStaticSelect {
     return {
         type: 'multi_static_select',
         action_id: actionId,
@@ -155,6 +157,8 @@ export function plainTextInput(actionId: string, optionalProps?: PlainTextInputO
         max_length: optionalProps?.maxLenght
     }
 }
+
+export declare type Select = StaticSelect | ExternalSelect | UsersSelect | ConversationsSelect | ChannelsSelect;
 
 export interface StaticSelectOptionalProps {
     initialOption?: Option;
