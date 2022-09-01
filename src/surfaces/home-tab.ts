@@ -2,7 +2,7 @@ import * as Slack from '@slack/types';
 import { BLOCK_TYPE } from "./block-kit";
 import { View } from "./view";
 
-interface IHomeTab extends Slack.View {
+interface IHomeTab extends Slack.HomeView {
     type: 'home';
     blocks: BLOCK_TYPE[];
     callback_id?: string;

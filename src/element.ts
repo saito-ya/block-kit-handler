@@ -1,5 +1,5 @@
 import * as Slack from '@slack/types';
-import { PlainTextElement, Option } from './object';
+import { PlainTextElement, MrkdownOption, PlainTextOption } from './object';
 
 declare type BUTTON_STYLE = 'primary' | 'danger';
 export interface ButtonOptionalProps {
@@ -20,18 +20,20 @@ export function button(text: PlainTextElement, actionId: string, optionalProps?:
 }
 
 export interface CheckboxesOptionalProps {
-    initialOptions?: Option[]
+    initialOptions?: (MrkdownOption | PlainTextOption)[];
+    focusOnLoad?: boolean;
 }
 export interface Checkboxes extends Slack.Checkboxes{}
-export function checkboxes(actionId: string, options: Option[], optionalProps?: CheckboxesOptionalProps): Checkboxes {
+export function checkboxes(actionId: string, options: (MrkdownOption | PlainTextOption)[], optionalProps?: CheckboxesOptionalProps): Checkboxes {
     // TODO: check if elements of initialOptions are included in options
-    
+
     return {
         type: 'checkboxes',
         action_id: actionId,
+        initial_options: optionalProps?.initialOptions,
         options,
-        initial_options: optionalProps?.initialOptions
-    }
+        focus_on_load: optionalProps?.focusOnLoad
+    };
 }
 
 export interface DatepickerOptionalProps {
@@ -51,11 +53,11 @@ export function datepicker(actionId: string, optionalProps?: DatepickerOptionalP
 export declare type MultiSelect = MultiStaticSelect | MultiExternalSelect | MultiUsersSelect  | MultiConversationsSelect | MultiChannelsSelect;
 
 export interface MultiStaticSelectOptionalProps {
-    initialOptions?: Option[];
+    initialOptions?: PlainTextOption[];
     maxSelectedItems?: number;
 }
 export interface MultiStaticSelect extends Slack.MultiStaticSelect{}
-export function multiStaticSelect(actionId: string, placeholder: PlainTextElement, options: Option[], optionalProps?: MultiStaticSelectOptionalProps): MultiStaticSelect {
+export function multiStaticSelect(actionId: string, placeholder: PlainTextElement, options: PlainTextOption[], optionalProps?: MultiStaticSelectOptionalProps): MultiStaticSelect {
     return {
         type: 'multi_static_select',
         action_id: actionId,
@@ -67,7 +69,7 @@ export function multiStaticSelect(actionId: string, placeholder: PlainTextElemen
 
 export interface MultiExternalSelectOptionalProps {
     minQueryLength?: number;
-    initialOptions?: Option[];
+    initialOptions?: PlainTextOption[];
     maxSelectedItems?: number;
 }
 export interface MultiExternalSelect extends Slack.MultiExternalSelect{}
@@ -130,7 +132,7 @@ export function multiChannelsSelect(actionId: string, placeholder: PlainTextElem
 }
 
 export interface OverflowMenu extends Slack.Overflow{}
-export function overflowMenu(actionId: string, options: Option[]): OverflowMenu {
+export function overflowMenu(actionId: string, options: PlainTextOption[]): OverflowMenu {
     return {
         type: 'overflow',
         action_id: actionId,
@@ -161,10 +163,10 @@ export function plainTextInput(actionId: string, optionalProps?: PlainTextInputO
 export declare type Select = StaticSelect | ExternalSelect | UsersSelect | ConversationsSelect | ChannelsSelect;
 
 export interface StaticSelectOptionalProps {
-    initialOption?: Option;
+    initialOption?: PlainTextOption;
 }
 export interface StaticSelect extends Slack.StaticSelect{}
-export function staticSelect(actionId: string, placeholder: PlainTextElement, options: Option[], optionalProps?: StaticSelectOptionalProps): StaticSelect {
+export function staticSelect(actionId: string, placeholder: PlainTextElement, options: PlainTextOption[], optionalProps?: StaticSelectOptionalProps): StaticSelect {
     return {
         type: 'static_select',
         action_id: actionId,
@@ -175,7 +177,7 @@ export function staticSelect(actionId: string, placeholder: PlainTextElement, op
 }
 
 export interface ExternalSelectOptionalProps {
-    initialOption?: Option;
+    initialOption?: PlainTextOption;
     minQueryLength?: number;
 }
 export interface ExternalSelect extends Slack.ExternalSelect{}
@@ -230,4 +232,20 @@ export function channelsSelect(actionId: string, placeholder: PlainTextElement, 
         placeholder,
         initial_channel: optionalProps?.initialChannel
     };
+}
+
+export interface TimepickerOptionalProps {
+    placeholder?: PlainTextElement;
+    initialTime?: string;
+    focus_on_load?: boolean;
+}
+export interface Timepicker extends Slack.Timepicker{}
+export function timepicker(actionId: string, optionalProps?: TimepickerOptionalProps): Timepicker {
+    return {
+        type: 'timepicker',
+        action_id: actionId,
+        initial_time: optionalProps?.initialTime,
+        placeholder: optionalProps?.placeholder,
+        focus_on_load: optionalProps?.focus_on_load
+    }
 }

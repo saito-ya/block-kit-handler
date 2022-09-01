@@ -28,12 +28,22 @@ export interface OptionOptionalProps {
     description?: Slack.PlainTextElement;
     url?: string;
 }
-export interface Option extends Slack.Option{}
-export function option(text: PlainTextElement | MrkdwnElement, value: string, optionalProps?: OptionOptionalProps): Option {
+export interface MrkdownOption extends Slack.MrkdwnOption{}
+export function mrkdwnOption(text: MrkdwnElement, value: string, optionalProps?: OptionOptionalProps): MrkdownOption {
     return {
         text,
         value,
+        url: optionalProps?.url,
         description: optionalProps?.description,
-        url: optionalProps?.url
+    }
+}
+
+export interface PlainTextOption extends Slack.PlainTextOption{}
+export function plainTextOption(text: PlainTextElement, value: string, optionalProps?: OptionOptionalProps): PlainTextOption {
+    return {
+        text,
+        value,
+        url: optionalProps?.url,
+        description: optionalProps?.description,
     }
 }

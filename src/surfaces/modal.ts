@@ -3,7 +3,7 @@ import { BLOCK_TYPE } from "./block-kit";
 import { View } from "./view";
 import { PlainTextElement } from '../object';
 
-interface IModal extends Slack.View {
+interface IModal extends Slack.ModalView {
     title: PlainTextElement;
     type: 'modal';
     blocks: BLOCK_TYPE[];
