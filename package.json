@@ -27,7 +27,7 @@
   "dependencies": {
     "@slack/types": "^2.7.0",
     "cross-env": "^7.0.2",
-    "mocha": "^7.2.0",
+    "mocha": "^10.2.0",
     "nyc": "^15.1.0",
     "ts-node": "^8.10.2",
     "typescript": "^3.9.7"
